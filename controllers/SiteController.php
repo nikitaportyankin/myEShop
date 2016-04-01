@@ -1,18 +1,29 @@
 <?php
 
+/**
+ * Class SiteController
+ */
 class SiteController
 {
-
+    /**
+     * Action для главной страницы
+     */
     public function actionIndex()
     {
+        //Список категорий для левого меню
         $categories = [];
         $categories = Category::getCategoryList();
 
+        //Список последних товаров
         $latestProducts = [];
         $latestProducts = Product::getLatestProducts(6);
 
-        require_once(ROOT . '/views/site/index.php');
+        //Список товаров для слайдера
+        $sliderProducts = [];
+        $sliderProducts = Product::getRecommendedProducts();
 
+        //Подключаем представление(вид)
+        require_once(ROOT . '/views/site/index.php');
         return true;
     }
     

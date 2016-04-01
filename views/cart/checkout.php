@@ -1,5 +1,5 @@
-<?php include 'views/layouts/header.php';?>
-<section>
+<?php include ROOT . '/views/layouts/header.php';?>
+<section xmlns="http://www.w3.org/1999/html">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -46,10 +46,9 @@
                                         <p>Номер телефона:</p>
                                         <input type="text" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>" />
                                         <p>Комментарий к заказу</p>
-                                        <input type="text" name="userComment" placeholder="" value="<?php echo $userComment; ?>"/>
-                                        <br/>
-                                        <br/>
-                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить заказ"/>
+                                        <input type="text" name="userComment" placeholder="" value="<?php echo $userComment; ?>" />
+                                        <br>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Оформить заказ"/>
                                     </form>
                                 </div>
                             </div>
@@ -60,4 +59,4 @@
         </div>    
     </div>
 </section>
-<?php include 'views/layouts/footer.php';?>        
+<?php include ROOT . '/views/layouts/footer.php';?>

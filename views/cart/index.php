@@ -1,4 +1,4 @@
-<?php include 'views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header.php'; ?>
 <section>
     <div class="container">
         <div class="row">
@@ -58,7 +58,8 @@
                                     <td colspan=><?php echo $totalPrice . ' грн';?></td>
                                 </tr>
                         </table>
-                        <a class="btn btn-default checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
+                        <a class="btn btn-success checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
+                        <br><br><br>
                     <?php else:?>
                         <p>Корзина пуста</p>
                         <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
@@ -68,4 +69,4 @@
         </div>
     </div>
 </section>
-<?php include 'views/layouts/footer.php';?>
+<?php include ROOT . '/views/layouts/footer.php';?>

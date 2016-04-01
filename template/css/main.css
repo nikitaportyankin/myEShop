@@ -546,6 +546,8 @@ ul.sub-menu {
 .footer-bottom {
   background: #D6D6D0;
   padding-top: 10px;
+  position: absolute;
+  width: 100%;
 }
 
 .footer-bottom p {
@@ -1552,7 +1554,7 @@ h2.title {
   width: auto;
   border-width: 8px;
   border-style: solid;
-  border-color:transparent transparent transparent #FE980F;
+  border-color: transparent;
   position: absolute;
   top: 11px;
   left:48px;

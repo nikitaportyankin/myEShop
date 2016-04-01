@@ -75,5 +75,20 @@ class Cart
         if (isset($_SESSION['products'])){
             unset($_SESSION['products']);
         }
-    } 
+    }
+    /**
+     * Удаляем товар с указанным id из корзины
+     * @param integer $id
+     */
+    public static function deleteProduct($id)
+    {
+        //Получаем массив с кол-вом и идентификаторами товаров в корзине
+        $productsInCart = self::getProducts();
+
+        //Удаляем из массива элемент с указанным id
+        unset($productsInCart[$id]);
+
+        //Записываем массив товаров с удалённым элементом в сессию
+        $_SESSION['products'] = $productsInCart;
+    }
 }

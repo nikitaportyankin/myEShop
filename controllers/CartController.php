@@ -158,7 +158,18 @@ class CartController
             }      
         }   
         require_once (ROOT . '/views/cart/checkout.php');
-        
         return true;
+    }
+    /**
+     * Action для удаления товара из корзины(синхронно)
+     * @param integer $id
+     */
+    public function actionDelete($id)
+    {
+        //Удаляем заданый товар из корзины
+        Cart::deleteProduct($id);
+
+        //Возвращаем пользователя в корзину
+        header("Location: /cart");
     }
 }

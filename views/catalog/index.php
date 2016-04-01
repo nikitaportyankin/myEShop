@@ -1,4 +1,4 @@
-<?php include 'views/layouts/header.php';?>
+<?php include ROOT . '/views/layouts/header.php';?>
 <section>
     <div class="container">
         <div class="row">
@@ -50,4 +50,4 @@
         </div>
     </div>
 </section>
-<?php include 'views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

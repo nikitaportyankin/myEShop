@@ -29,9 +29,9 @@
                                 <div class="single-products">
                                     <div class="productinfo text-center">
                                         <a href="/product/<?php echo $product['id']; ?>">
-                                            <img src="/template/images/home/product1.jpg" alt="" />
+                                            <img src="<?php echo Product::getImageThumbnail($product['id']); ?>" class="thumb-product-img" alt="" />
                                             <h2><?php echo $product['price']; ?> грн</h2>
-                                            <p><?php echo $product['name']; ?></p>
+                                            <?php echo $product['name']; ?>
                                         </a>                                                
                                         <a href="#" data-id="<?php echo $product['id']; ?>"
                                            class="btn btn-default add-to-cart">

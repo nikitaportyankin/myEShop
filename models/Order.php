@@ -77,4 +77,28 @@ class Order
         }
         return $ordersList;
     }
+
+    /**
+     * Возвращает текстое пояснение статуса для заказа :<br/>
+     * <i>1 - Новый заказ, 2 - В обработке, 3 - Доставляется, 4 - Закрыт</i>
+     * @param integer $status <p>Статус</p>
+     * @return string <p>Текстовое пояснение</p>
+     */
+    public static function getStatusText($status)
+    {
+        switch ($status) {
+            case '1':
+                return 'Новый заказ';
+                break;
+            case '2':
+                return 'В обработке';
+                break;
+            case '3':
+                return 'Доставляется';
+                break;
+            case '4':
+                return 'Закрыт';
+                break;
+        }
+    }
 }

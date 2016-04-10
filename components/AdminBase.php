@@ -21,8 +21,7 @@ abstract class AdminBase
         if ($user['role'] == 'admin'){
             return true;
         }
-
         //Иначе завершаем работу с сообщением о закрытом доступе
-        die('Acсess denied');
+        die('Нет доступа');
     }
 }

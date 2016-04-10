@@ -83,8 +83,16 @@ class AdminProductController extends AdminBase
                 if($id){
                     //Проверим загружалось ли через форму изображение
                     if (is_uploaded_file($_FILES["image"]["tmp_name"])){
-                        //Если загружалось, переместим его в нужную папку и дадим новое имя
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                        //Если загрузилось, изменяем размер для отображения в категориях и сохраняем в нужную деррикторию
+                        $imageThumbnail = new SimpleImage();
+                        $imageThumbnail->load($_FILES["image"]["tmp_name"]);
+                        $imageThumbnail->resize(220, 170);
+                        $imageThumbnail->save($_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/thumbnails/thumb{$id}.jpg");
+                        //Изменяем размер для отображения в карточке товара и сохраняем в нужную деррикторию
+                        $imageBig = new SimpleImage();
+                        $imageBig->load($_FILES["image"]["tmp_name"]);
+                        $imageBig->resize(370, 320);
+                        $imageBig->save($_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/big/big{$id}.jpg");
                     }
                 }
                 //Перенаправляем пользователя на страницу "Управление товарами"

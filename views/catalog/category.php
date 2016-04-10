@@ -1,5 +1,5 @@
 <?php
-include 'views/layouts/header.php';
+include ROOT . '/views/layouts/header.php';
 ?>
 <section>
     <div class="container">
@@ -32,7 +32,7 @@ include 'views/layouts/header.php';
                                 <div class="single-products">
                                     <div class="productinfo text-center">
                                         <a href="/product/<?php echo $product['id'] ;?>">
-                                            <img src="/template/images/home/product1.jpg" alt="" />
+                                            <img src="<?php echo Product::getImageThumbnail($product['id']); ?>" class="thumb-product-img" alt="" />
                                             <h2><?php echo $product['price']; ?> грн</h2>
                                             <p><?php echo $product['name'];?></p>
                                         </a>
@@ -53,5 +53,5 @@ include 'views/layouts/header.php';
     </div>
 </section>
 <?php
-include 'views/layouts/footer.php';
+include ROOT . '/views/layouts/footer.php';
 ?>

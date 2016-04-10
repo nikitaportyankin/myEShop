@@ -51,7 +51,7 @@
                     <th>ID товара</th>
                     <th>Артикул товара</th>
                     <th>Название</th>
-                    <th>Цена</th>
+                    <th>Цена, грн</th>
                     <th>Количество</th>
                 </tr>
                 <?php foreach ($products as $product): ?>
@@ -59,7 +59,7 @@
                         <td><?php echo $product['id']; ?></td>
                         <td><?php echo $product['code']; ?></td>
                         <td><?php echo $product['name']; ?></td>
-                        <td>грн<?php echo $product['price']; ?></td>
+                        <td><?php echo $product['price']; ?></td>
                         <td><?php echo $productsQuantity[$product['id']]; ?></td>
                     </tr>
                 <?php endforeach; ?>

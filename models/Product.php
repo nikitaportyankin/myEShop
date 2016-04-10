@@ -264,4 +264,43 @@ class Product
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
         return $result->execute();
     }
+
+    /**
+     * Возвращает путь к изображению
+     * @param integer $id
+     * @return string <p>Путь к изображению</p>
+     */
+    public static function getImageThumbnail($id)
+    {
+        // Название изображения-пустышки
+        $noImage = 'no-image.jpg';
+        // Путь к папке с товарами
+        $path = '/upload/images/products/thumbnails/';
+        // Путь к изображению товара
+        $pathToProductImage = $path . 'thumb' . $id . '.jpg';
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+
+    public static function getImageBig($id)
+    {
+        // Название изображения-пустышки
+        $noImageBig = 'no-image-big.jpg';
+        // Путь к папке с товарами
+        $path = '/upload/images/products/big/';
+        // Путь к изображению товара
+        $pathToProductImage = $path . 'big' . $id . '.jpg';
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImageBig;
+    }
 }

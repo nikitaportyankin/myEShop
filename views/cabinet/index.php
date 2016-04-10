@@ -12,7 +12,4 @@
         </div>
     </div>
 </section>
-
-
-
 <?php include 'views/layouts/footer.php'; ?>
